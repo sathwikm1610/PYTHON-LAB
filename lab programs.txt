@@ -1,3 +1,4 @@
+                                                            PART-A
 1A) 
 
 Input :
@@ -75,6 +76,7 @@ Enter a number : -1
 Error in input
 
 2B)
+Input:
 
 def bin2Dec(val):
     rev=val[::-1]
@@ -121,6 +123,7 @@ Enter a octal number : 675
 1BD
 
 3B)
+   Input:
 
 sentence = input("Enter a sentence : ")
 
@@ -146,6 +149,7 @@ This sentence has 11 words
 This sentence has 1 digits 2 upper case letters 42 lower case letters
 
 3B)
+   Input:
 
 str1 = input("Enter String 1 \n")
 str2 = input("Enter String 2 \n")
@@ -182,6 +186,7 @@ Similarity between two said strings:
 0.9375
 
 4A)
+   Input:
 
 import random
 
@@ -263,6 +268,7 @@ Sorting using Merge Sort
 [65, 176, 265, 326, 359, 514, 613, 828, 868, 919]
 
 4B)
+   Input:
 
 def roman2Dec(romStr):
     roman_dict ={'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
@@ -294,6 +300,7 @@ Enter a Roman Number : MLXVI
 1066
 
 5A)
+   Input:
 
 import re
 
@@ -346,6 +353,7 @@ Using Regular Expression
 Invalid phone number
 
 5B)
+   Input:
 
 import re
 
@@ -370,6 +378,7 @@ Output:
 sample@gmail.com
 
 6A)
+    Input:
 
 import os.path
 import sys
@@ -406,6 +415,7 @@ The word the appears 2 times in the file
 
 
 6B)
+    Input:
 
 import os
 import sys
@@ -435,6 +445,8 @@ Enter Directory name that you want to backup : zipDemo
 Archive myZip.zip created successfully
 
 7A)
+   Input:
+
 import math
 
 class Shape:
@@ -497,6 +509,7 @@ The area of the Rectangle is 20 units
 The area of the Triangle is 6.0 units
 
 7B)
+    Input:
 
 class Employee:
     def __init__(self):
@@ -546,6 +559,7 @@ Updated Salary 99800
 
 
 8A)
+   Input:
 
 class PaliStr:
     def __init__(self):
@@ -607,6 +621,7 @@ Given integer is a Palindrome
 
 
 9A)
+   Input:
 
 import requests
 import os
@@ -655,6 +670,7 @@ Downloading https://imgs.xkcd.com/comics/hand_dryers.png...
 
 
 9B)
+    Input:
 
 from openpyxl import Workbook 
 from openpyxl.styles import Font
@@ -730,6 +746,7 @@ Enter state code for finding language TS
 Corresponding language for code TS is Telugu
 
 10A)
+     Input:
 
 from PyPDF2 import PdfWriter, PdfReader
 
@@ -761,7 +778,7 @@ outputDownload
 
 
 10B)
-
+    Input:
 
 Fetch weather data from the JSON
 
@@ -829,3 +846,152 @@ Output:
 Current temperature: 15.45°C
 Humidity: 64%
 Weather description: clear sky
+
+
+                                                      PART-B
+1)
+
+Input :
+
+from datetime import date
+
+perName = input("Enter the name of the person:")
+perDOB = int(input("Enter his year of birth:"))
+
+curYear = date.today().year
+perAge = curYear - perDOB
+
+if(perAge>60):
+              print(perName,"aged",perAge,"years is a senior citizen.")
+else:
+       print(perName,"aged",perAge,"years is not a senior citizen.")
+
+Output:
+
+Enter the name of the person:Ajay
+Enter his year of birth:2001
+Ajay aged 22 years is not a senior citizen.
+
+
+Enter the name of the person:vijay
+Enter his year of birth:1947
+Vijay aged 76 years is a senior citizen
+
+
+
+2)
+
+Input:
+
+def fact(num):
+     if num == 0:
+          return 1
+     else:
+          return num*fact(num-1)
+n = int(input("Enter the value of N:"))
+r = int(input("Enter the value of R:"))
+nCr = fact(n)/(fact(r)*fact(n-r))
+print(n,'C',r,"=","%d"%nCr,sep = "")
+
+
+Output:
+
+Enter the value of N:5
+Enter the value of R:2
+5 C 2 = 10
+
+
+
+3)
+  Input:
+
+from math import sqrt
+myList = []
+num = int(input("Enter the number of elements in your list :"))
+
+for i in range(num):
+    val = int(input("Enter the element :"))
+    myList.append(val)
+print("The length of list is", len(myList))
+print('List Contents are',myList)
+
+total = 0
+for elem in myList:
+    total += elem
+mean = total/num
+
+total = 0
+for elem in myList:
+    total += (elem - mean)*(elem - mean)
+variance = total/num
+stdDev = sqrt(variance)
+
+print("Mean =",mean)
+print("Variance =",variance)
+print("Standard Deviation =","%.2f"%stdDev)
+
+
+Output:
+
+Enter the number of elements in your list :4
+Enter the element :10
+Enter the element :6
+Enter the element :15
+Enter the element :12
+The length of list is 4
+List Contents are [10, 6, 15, 12]
+Mean = 10.75
+Variance = 10.6875
+Standard Deviation = 3.27
+
+
+4)
+  Inout:
+
+num = input("Enter a number :")
+print("The number entered is:",num)
+uniqDig = set(num)
+for elem in uniqDig:
+    print(elem,"occurs",num.count(elem),"times")
+
+
+  Output:
+
+Enter a number :345634231
+The number entered is: 345634231
+6 occurs 1 times
+1 occurs 1 times
+5 occurs 1 times
+2 occurs 1 times
+4 occurs 2 times
+3 occurs 3 times
+
+
+5)
+  Input:
+
+import sys
+
+def DivExp(a,b):
+     assert a>0,"a should be greater than 0"
+     try:
+          c=a/b
+     except ZeroDivisionError:
+          print("value of b cannot be zero")
+          sys.exit(0)
+     else:
+          return c
+
+val1 = int(input("Enter a value for a:"))
+val2 = int(input("Enter a value for b:"))
+
+val3 = DivExp(val1,val2)
+
+print(val1,"/",val2,"=",val3)
+           
+
+  Output:
+
+Enter a value for a:25
+Enter a value for b:5
+25 / 5 = 5.0
